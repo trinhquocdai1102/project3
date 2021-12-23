@@ -1,0 +1,758 @@
+/* Begin: Navbar CSS */
+.Navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--globalPCPadding);
+  background: var(--navbarBg);
+  z-index: 999;
+  height: var(--navHeight);
+}
+
+.Navbar.active {
+  background: linear-gradient(90deg,#fc5c7d, #6a82fb);;
+}
+
+.Navbar a {
+  text-decoration: none;
+  color: var(--clrLink);
+}
+
+.NavLogo {
+  width: 40px;
+}
+
+.NavLogo img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+
+.NavCenter {
+  display: flex;
+  gap: 40px;
+  justify-content:center;
+  padding: 0;
+  font-size: 20px;
+}
+
+.NavCenter li {
+  list-style: none;
+}
+
+.NavLinks:hover.NavLinks-Items {
+  display: block !important;
+}
+
+.NavLinks ion-icon {
+  vertical-align: middle;
+  transition: all 1s;
+}
+
+.NavLinks ion-icon:last-child {
+  display: none;
+}
+
+.NavLinks:hover ion-icon:last-child {
+  display: inline-block;;
+}
+
+.NavLinks:hover ion-icon:first-child {
+  display: none;
+}
+
+.NavLogin a {
+  display: block;
+  width: 100px;
+  line-height: 40px;
+  background-color: #4596ce;
+  color: #fff;
+  border-radius: 12px;
+  text-align: center;
+}
+
+/* 
+.NavChildLinks {
+  display: a;
+} */
+
+.NavLinks-Items {
+  position: absolute;
+  display: none;
+  margin: 0 auto;
+  top: var(--navHeight);
+  background: var(--navbarBg);
+  font-size: 16px;
+}
+
+.NavChildLinks  {
+  text-align: center;
+  padding: 12px;
+}
+
+/* End: Navbar CSS */
+
+
+
+
+
+
+
+
+/* Begin: Slider CSS */
+.Container-Slider {
+  width: 100%;
+  height: 500px;
+  top: 0;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  margin: 70px 0;
+}
+
+.Slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  transition: opacity ease-in-out 0.4s;
+}
+.Slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.Active-Animation {
+  opacity: 1;
+}
+
+.Btn-Slide {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #f1f1f1;
+  border: 1px solid rgba(34, 34, 34, 0.287);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.Btn-Slide img {
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+}
+.Prev {
+  top: 50%;
+  left: 20px;
+  transform: translateY(-60%);
+}
+.Next {
+  top: 50%;
+  right: 20px;
+  transform: translateY(-60%);
+}
+
+.Container-Dots {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+.Dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 3px solid #f1f1f1;
+  margin: 0 5px;
+  background: #f1f1f1;
+}
+
+.Dot:hover {
+  cursor: pointer;
+}
+
+.Dot.Active {
+  background: rgb(32, 32, 32);
+}
+
+/* End: Slider CSS */
+
+
+
+
+
+
+
+
+/* Begin: Home Content CSS */
+.HomePage {
+  padding:  var(--globalPCPadding);
+}
+
+
+
+/* Begin: Our Product CSS */
+.Our-Product {
+  display:grid;
+  grid-template-columns: repeat(1, 100%);
+  gap: 100px;
+  padding:  var(--homeContentPadding);
+  margin: 0;
+}
+
+.Our-Product li:nth-child(even) div:nth-child(even) {
+  grid-row: 1/2;
+  justify-self: right;
+}
+
+.Our-Product li:nth-child(even) div:nth-child(odd) {
+  grid-column: 2/2;
+  justify-self: left;
+}
+
+.Our-Product li:nth-child(even) {
+  justify-content: right;
+}
+
+.Our-Product li:nth-child(odd) div:nth-child(odd) {
+  justify-self: right;
+}
+
+.Our-Product li:nth-child(odd) {
+  justify-content: left;
+}
+
+
+.Our-Product li {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(2, 40%);
+  grid-template-rows: max-content;
+  list-style: none;
+  width: 100%;
+}
+
+.Our-Product li div {
+  text-align: left;
+  max-width: 500px;
+}
+
+.Our-Product__Img {
+  width: clamp(200px, 72%, 450px);
+}
+
+.Our-Product li a {
+  text-decoration: none;
+  color: #000;
+}
+
+.Our-Product__Img a img {
+  width:100%;
+  border-radius: 20px;
+}
+
+
+.Our-Product__Desc a {
+  font-size:28px;
+}
+/* End: Our Product CSS */
+
+
+
+
+/* Begin: Choose Us CSS */
+.ChooseUs {
+  padding: var(--homeContentPadding);
+}
+
+.ChooseUs-List {
+  display: flex;
+  justify-content:center;
+  flex-wrap: wrap;
+  gap: 16%;
+  padding: 0;
+}
+
+.ChooseUs-List li {
+  list-style: none;
+  text-align: center;
+  padding: 10px;
+  width: clamp(20px, 100%, 300px);
+}
+
+.ChooseUs-List li h3 {
+  font-size:24px;
+}
+
+.ChooseUs-List li p{
+  text-align: left;
+}
+
+.ChooseUs-Item img {
+  width: 100px
+}
+/* End: Choose Us CSS */
+
+
+
+
+
+/* Begin: Partnered With CSS */
+.PartnerWith {
+  padding: var(--homeContentPadding);
+}
+
+.PartnerWith h1 {
+  text-align: center
+}
+
+.PartnerWith-List {
+  padding: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 4%;
+}
+
+.PartnerWith-List h1 {
+  text-align: center
+}
+
+.PartnerWith-List li {
+  list-style: none;
+  width: 80px;
+}
+
+.PartnerWith-List li img {
+  width: 100%;
+}
+/* End: Partnered With CSS */
+
+
+/* Begin: Feedback CSS */
+.Feedback {
+  padding: var(--homeContentPadding);
+  padding-bottom: 0;
+}
+
+.Feedback-List > ul {
+  padding: 0
+}
+
+.Feedback-Item {
+  display: grid;
+  grid-template-columns: repeat(2,50%);
+  justify-content: space-between;
+  margin: 0;
+}
+
+.Feedback-Item img {
+  width: 100%;
+}
+
+.Feedback-Item li {
+  list-style: none;
+  padding: var(--feedbackPadding);
+}
+
+.Feedback-1 li:first-child {
+  background-color: var(--feedbackClr);
+  color: #fff;
+  text-align: center;
+  justify-self: right;
+}
+
+.Feedback-1 li:first-child img {
+  width: clamp(100px,30vw,240px);
+  /* height: clamp(100px,30vw,240px); */
+  border-radius: 12px;
+}
+
+.Feedback-1 li:first-child h4 {
+  margin: 40px 0 0;
+}
+
+.Feedback-1 li:last-child {
+  background: url('../public/image/home/feedback/feedback-icon.jpg') no-repeat center center;
+  text-align: center;
+}
+
+
+
+.Feedback-2 li:first-child {
+  background: url('../public/image/home/feedback/benefit.jpg') no-repeat center center;
+  padding: var(--feedbackPadding);
+  justify-self: right;
+}
+
+.Feedback-2 li:last-child {
+  background-color: #ec6607;
+}
+
+.Feedback-2 li:last-child div:first-child {
+  width: 100%;
+}
+
+.Feedback-2 li:last-child  div:first-child h1 {
+  font-weight: bold;
+}
+
+.Feedback-2 li:last-child div:first-child img {
+  width: 20%;
+}
+
+.Feedback-2 li:last-child div:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 0;
+}
+
+.Feedback-Item h1 {
+  color: var(--feedbackClr)
+}
+
+
+.Feedback-2 li:last-child div:last-child input {
+  width:60%;
+  padding: var(--inputFeedbackPadding);
+  outline:none;
+}
+
+.Feedback-2 li:last-child div:last-child button {
+  outline: none;
+  padding: var(--inputFeedbackPadding);
+  border: none;
+  border-radius: 4px;
+  background: var(--feedbackClr);
+  color: #fff;
+}
+
+.Feedback-2 li:last-child div:last-child button:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+/* End: Feedback CSS */
+
+
+
+/* End: Home Content CSS */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Begin: Footer CSS */
+.Footer {
+  border-top: 1px solid #000;
+  padding: var(--footerPCPadding);
+}
+
+.Footer li {
+  list-style: none;
+}
+
+.Footer li ul li a {
+  font-size: 14px;
+}
+
+.Footer li ul li:first-child a{
+  font-size: 28px;
+  font-weight: bold;
+  color: rgba(0 ,0 ,0 ,0.6);
+}
+
+/* .Footer li ul li {
+  text-align: center;
+} */
+/* 
+.Footer li ul li:first-child {
+  text-align: left;
+} */
+
+.Footer a {
+  text-decoration: none;
+  color: #000;
+}
+
+.Footer a:hover {
+  opacity: 0.7;
+}
+
+.Footer-List {
+  display: flex;
+  padding: 0;
+  flex-wrap: wrap;
+  width: clamp(100px, 90%, 1000px);
+  margin: 0 auto;
+}
+
+.Footer-List > li {
+  width: 20%;
+}
+
+.Footer-List > li:last-child {
+  width: 40%;
+}
+
+.FooterLogo {
+  width: 100px;
+  display: flex;
+  align-items: top;
+}
+
+.FooterLogo img {
+  width: 60px;
+  height: 60px;
+}
+
+.FooterLogo span {
+  font-size: 24px;
+  margin-left: 4px;
+  font-weight: bold;
+  color: #4596ce;
+  margin-top: 12px;
+}
+
+.Copy-Right {
+  text-align: center;
+  padding-top: 40px;
+  font-size: 12px;
+}
+/* End: Footer CSS */
+
+
+
+
+
+
+
+
+
+
+/* Begin: Mobile Responsive CSS  */
+@media (max-width: 739px) {
+  .Navbar {
+    display: block;
+    padding: 0 !important;
+  }
+  .NavLogo {
+    line-height: var(--navHeight);
+    margin-left: 20px;
+  }
+  .NavCenter {
+    border-top: 1px solid #000;
+    display: block;
+    margin: 0;
+    padding: 0;
+    background: var(--navbarBg);
+  }
+
+  .NavCenter li a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 24px 0;
+  }
+
+  .NavCenter li a:hover {
+    background: #fff;
+  }
+
+  .Mobile-Menu__Icon {
+    position: absolute;
+    right: 16px;
+    top: 0;
+    width: 30px;
+    font-size: 32px;
+    padding: 8px;
+  }
+
+  .Mobile-Menu__Icon ion-icon {
+    vertical-align: middle
+  }
+
+  .Mobile-Menu__Icon:hover ion-icon {
+    transform: scale(1.1);
+    opacity: .5;
+    cursor: pointer;
+  }
+
+  .NavLogin {
+    display: flex;
+    justify-content: center;
+  }
+
+  .NavLogin a {
+    width: 100%;
+    border-radius: 0;
+    padding: 12px;
+  }
+
+  .NavLogin a:hover {
+    opacity:0.9;
+  }
+
+  .Footer-List {
+    row-gap: 40px;
+    gap: 20px;
+  }
+
+  .Footer-List > li {
+    width: 100%;
+  }
+
+  /* .FooterHelp ul {
+    padding: 0;
+  } */
+
+  .Footer-List > li:last-child{
+    width: 100%;
+  }
+
+  .Feedback-Item {
+    grid-template-columns: repeat(1,100%);
+    grid-template-rows: max-content;
+  }
+
+  .Feedback-Item li {
+    min-height: 300px;
+  }
+
+  .Feedback-2 li:last-child div:last-child button {
+    margin-top: 12px;
+  }
+  
+}
+/* End: Mobile Responsive CSS  */
+
+
+
+
+
+
+
+
+/* Begin: Tablet Responsive CSS */
+@media (min-width: 740px) and (max-width: 1023px) {
+  .NavLogo {
+    display: none;
+  }
+  .NavCenter {
+    gap: 12px;
+  }
+  .Our-Product {
+    padding: 40px;
+  }
+
+  .Our-Product li:nth-child(even) {
+    justify-content: center;
+}
+}
+/* End: Tablet Responsive CSS */
+
+
+
+
+/* Begin: Tablet & Mobile Responsive CSS */
+@media (max-width: 1023px) {
+  .Navbar { 
+    padding:  var(--globalMobileTabletPadding);
+  }
+  
+  .HomePage {
+    padding:  var(--globalMobileTabletPadding);
+  }
+
+  .Our-Product li {
+    display: block;
+  }
+
+  .Footer {
+    padding: var(--globalMobileTabletPadding);
+  }
+
+  
+  .Footer {
+    padding: var(--footerMobileTabletPadding);
+  }
+
+  .Footer-List {
+    width: 100%;
+  }
+
+  .Feedback-2 li:first-child {
+    justify-self: unset;
+  }
+
+  
+  .Feedback-2 li:last-child div:last-child input {
+    width: 80%;
+  }
+
+}
+/* End: Tablet & Mobile Responsive CSS */
+
+
+
+
+/* Begin: Table & PC Responsive CSS */
+@media (min-width: 740px) {
+  .Mobile-Menu__Icon {
+    display: none;
+  }
+
+  .NavLogin a:hover {
+    opacity: 0.8;
+  }
+
+  .NavCenter a:hover {
+    opacity: 0.7;
+  }
+
+
+}
+/* End: Table & PC Responsive CSS */
+
+
+
+
+
+
+/* Begin: PC Responsive CSS */
+@media (min-width: 1023px) {
+  .Feedback-Item li {
+    justify-content: center;
+    height: clamp(400px, 40vw, 500px);
+    width:  clamp(400px, 40vw, 500px);
+  }
+}
+/* End: PC Responsive CSS */
+
+
+
+
+
+

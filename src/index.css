@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); 
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins';
+}
+
+:root {
+    --navbarBg: linear-gradient(90deg, #e1eec3, #f05053);
+    --clrLink: #000;
+    --navHeight: 70px;
+    --decreaseMargin: 100px;
+    --homeContentPadding: 20px 0 100px;
+    --feedbackPadding: 28px;
+    --inputFeedbackPadding: 12px;
+    --feedbackClr: #002f59;
+}
+
+
+
+/* Tablet & Mobile CSS */
+@media (max-width: 1023px) {
+  :root {
+    --globalMobileTabletPadding: 0 clamp(40px, 4%, 40px);
+    --footerMobileTabletPadding: 40px clamp(40px, 4%, 40px) 0;
+  }
+}
+
+/* PC Responsive CSS */
+@media (min-width: 1024px) {
+  :root {
+    --globalPCPadding: 0 100px;
+    --footerPCPadding: 40px 100px 0;
+  }
+}
