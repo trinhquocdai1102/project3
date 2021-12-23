@@ -28,7 +28,7 @@ const Footer = () => {
                     <ul>
                         {ContactItems.map((item, index) => {
                             return (
-                                <li>
+                                <li key={index}>
                                     <Link to="">
                                         {item.name}{' '}{item.description}
                                     </Link>

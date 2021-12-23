@@ -2,11 +2,10 @@ export const NavbarItems = [
     {
         id: 1,
         name: 'Home',
-        url: '',
+        url: '/',
         className: 'NavLinks',
         description: '',
         iconDown: '',
-        iconUp: '/',
         childItems: [
             // {
             //     id: 1,
@@ -28,27 +27,28 @@ export const NavbarItems = [
     {
         id: 2,
         name: 'Vehicle insurance',
-        url: '/Insurances',
+        url: '',
         className: 'NavLinks',
         description: '',
         iconDown: 'chevron-down-outline',
-        iconUp: 'chevron-up-outline',
         childItems: [
             {
                 id: 1,
                 name: 'Car Insurance',
+                url: '/CarInsurance',
                 classChildName: 'NavChildLinks',
             },         
             {
                 id: 2,
                 name: 'Motorbike Insurance',
+                url: '/MotorBikeInsurance',
                 classChildName: 'NavChildLinks',
             },   
-            {
-                id: 3,
-                name: '',
-                classChildName: 'NavChildLinks',
-            },   
+            // {
+            //     id: 3,
+            //     name: '',
+            //     classChildName: 'NavChildLinks',
+            // },   
         ],
     },
     {
@@ -58,7 +58,6 @@ export const NavbarItems = [
         className: 'NavLinks',
         description: '',
         iconDown: '',
-        iconUp: '',
         childItems: [
             // {
             //     id: 1,
@@ -84,7 +83,6 @@ export const NavbarItems = [
         className: 'NavLinks',
         description: '',
         iconDown: '',
-        iconUp: '',
         childItems: [
             // {
             //     id: 1,

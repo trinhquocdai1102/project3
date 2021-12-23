@@ -54,20 +54,20 @@ function Navbar() {
                     {NavbarItems.map((item, index) => {
                         return (
                             <li key={index}>
-                                <Link to="" className={item.className}>
-                                    {item.name}
-                                    <ion-icon name={'' || item.iconDown}></ion-icon>
-                                    <ion-icon name={'' || item.iconUp}></ion-icon>
+                                <Link to={item.url} className={item.className}>
+                                    <div>{item.name}
+                                      <ion-icon name={'' || item.iconDown}></ion-icon>
+                                    </div>
                                 </Link>
-                                <div className="NavLinks-Items">
-                                    {item.childItems.map((child, index) => {
-                                        return (
-                                            <div key={index} className={child.classChildName}>
-                                                <Link to={item.url}>{child.name}</Link>
-                                            </div>
-                                        )
-                                    })}
-                                </div>
+                                    <div className="NavLinks-Items">
+                                        {item.childItems.map((child, index2) => {
+                                            return (
+                                                <div key={index2} className={child.classChildName}>
+                                                    <Link to={child.url}>{child.name}</Link>
+                                                </div>
+                                            )
+                                        })}
+                                    </div>
                             </li>
                         )
                     })}

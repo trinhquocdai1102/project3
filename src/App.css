@@ -42,27 +42,33 @@
 
 .NavCenter li {
   list-style: none;
+  position: relative;
+  display: block;
+  line-height: var(--navHeight);
+  transition: all 0.2s;
 }
 
-.NavLinks:hover.NavLinks-Items {
-  display: block !important;
+.NavCenter > li:hover{
+  /* opacity: .8; */
+  transform: scale(1.07)
+}
+
+.NavCenter li:hover .NavChildLinks {
+  opacity: 1;
+}
+
+.NavCenter li:hover .NavLinks-Items {
+  display: block;
+}
+
+.NavCenter li:hover ion-icon {
+  transform: rotate(180deg)
 }
 
 .NavLinks ion-icon {
   vertical-align: middle;
-  transition: all 1s;
-}
-
-.NavLinks ion-icon:last-child {
-  display: none;
-}
-
-.NavLinks:hover ion-icon:last-child {
-  display: inline-block;;
-}
-
-.NavLinks:hover ion-icon:first-child {
-  display: none;
+  transition: all .7s;
+  margin-left: 4px;
 }
 
 .NavLogin a {
@@ -75,23 +81,30 @@
   text-align: center;
 }
 
-/* 
-.NavChildLinks {
-  display: a;
-} */
-
 .NavLinks-Items {
   position: absolute;
   display: none;
   margin: 0 auto;
-  top: var(--navHeight);
-  background: var(--navbarBg);
+  top: calc(var(--navHeight));
+  background: var(--clrMenuChild);
   font-size: 16px;
+  z-index: 1;
 }
 
 .NavChildLinks  {
   text-align: center;
-  padding: 12px;
+}
+
+.NavChildLinks a {
+  display: block;
+  padding: 0 20px;
+  height:70px;
+  width: 180px;
+  color: #fff;
+}
+
+.Contact-RightContent ul li span {
+  margin-left: 10px;
 }
 
 /* End: Navbar CSS */
@@ -196,6 +209,7 @@
 .HomePage {
   padding:  var(--globalPCPadding);
 }
+/* End: Home Content CSS */
 
 
 
@@ -444,8 +458,86 @@
 /* End: Feedback CSS */
 
 
+/* Begin:  Contact CSS*/
+.Contact {
+  margin-top: var(--navHeight);
+  padding: 32px 60px 100px;
+}
 
-/* End: Home Content CSS */
+.Contact-Header p:first-child {
+  font-size: 28px;
+}
+
+.Contact-Center {
+  display: flex;
+  gap: var(--contactContentItemPadding);
+  justify-content: center;
+  background: var(--navbarBg);
+  padding: clamp(12px, 4%, 60px);
+}
+
+.Contact-Center > div{
+  max-width: 500px;
+}
+
+.Contact-Input {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.DivInput input {
+  outline: none;
+  padding: 8px;
+  width: clamp(100px, 60vw, 200px);
+}
+
+.Contact-Right {
+  border-left: 1px solid #000;
+  padding-left: var(--contactContentItemPadding);
+}
+
+.Contact-Right li {
+  list-style: none;
+}
+
+.Contact-SubmitBtn {
+  outline: none;
+  border: none;
+  height: 40px;
+  width: 100px;
+  align-self: end;
+  border-radius: 4px;
+  background: var(--feedbackClr);
+  color: #fff;
+}
+
+.Contact-SubmitBtn:hover {
+  opacity: .8;
+  cursor: pointer;
+}
+
+.Contact-TextArea {
+  width: 70%;
+}
+
+.Contact-TextArea textarea {
+  max-width: 100%;
+  min-width: 200px;
+  max-height: 2000px;
+  min-height:100px;
+  padding: 8px;
+  font-size: 16px;
+}
+
+.Contact-RightContent ul {
+  word-wrap: break-word;
+}
+
+
+/* End:  Contact CSS*/
 
 
 
@@ -567,18 +659,24 @@
     display: block;
     margin: 0;
     padding: 0;
-    background: var(--navbarBg);
+    /* background: var(--navbarBg); */
+    background: #ccc;
   }
-
-  .NavCenter li a {
-    display: block;
+  
+  .NavCenter li > a {
+    justify-content: left;
+    display: flex;
     width: 100%;
     text-align: center;
-    padding: 24px 0;
+    padding: 4px 10%;
   }
 
-  .NavCenter li a:hover {
+  .NavCenter li  a:hover {
     background: #fff;
+  }
+
+  .NavLinks-Items a:hover {
+    color: var(--clrMenuChild);
   }
 
   .Mobile-Menu__Icon {
@@ -613,6 +711,12 @@
 
   .NavLogin a:hover {
     opacity:0.9;
+    background: blue;
+  }
+
+  .NavLinks-Items {
+    right: 0;
+    border-radius: 4px;
   }
 
   .Footer-List {
@@ -645,6 +749,20 @@
     margin-top: 12px;
   }
   
+
+  .Contact {
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+
+  .DivInput {
+    width: 100%;
+  }
+
+  .Contact-Input Input {
+    width: 60%;
+    min-width: 200px;
+  }
 }
 /* End: Mobile Responsive CSS  */
 
@@ -711,6 +829,20 @@
   .Feedback-2 li:last-child div:last-child input {
     width: 80%;
   }
+
+  .Contact-Center {
+    flex-wrap: wrap;
+  } 
+
+  .Contact-Right {
+    border-left: none;
+    border-top: 1px solid #000;
+    padding-left: var(--contactContentItemPadding);
+  }
+  
+  .Contact-Center > div{
+    width: 100%;
+}
 
 }
 /* End: Tablet & Mobile Responsive CSS */

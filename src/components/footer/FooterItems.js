@@ -36,19 +36,19 @@ export const ContactItems = [
         id: 2,
         name: 'Address:',
         url:'',
-        description: 'No.285, Doi Can Street, Ba Dinh District, Ha Noi, Vietnam',
+        description: 'No. 285, Doi Can Street, Ba Dinh District, Ha Noi, Vietnam',
     },
     {
         id: 3,
         name: 'Tel:',
         url:'',
-        description: '0329711504',
+        description: '0329 711 504',
     },
     {
         id: 4,
         name: 'Email:',
         url: '',
-        description: 'Trinhquocdai1102@gmail.com',
+        description: 'trinhquocdai1102@gmail.com',
     },
 ]
 

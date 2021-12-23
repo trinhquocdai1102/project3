@@ -5,6 +5,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins';
+  word-wrap: break-word;
 }
 
 :root {
@@ -16,6 +17,8 @@ body {
     --feedbackPadding: 28px;
     --inputFeedbackPadding: 12px;
     --feedbackClr: #002f59;
+    --clrMenuChild: #282a35;
+    --contactContentItemPadding: 20px;
 }
 
 
@@ -23,7 +26,7 @@ body {
 /* Tablet & Mobile CSS */
 @media (max-width: 1023px) {
   :root {
-    --globalMobileTabletPadding: 0 clamp(40px, 4%, 40px);
+    --globalMobileTabletPadding: 0 clamp(28px, 4%, 40px);
     --footerMobileTabletPadding: 40px clamp(40px, 4%, 40px) 0;
   }
 }
