@@ -57,23 +57,20 @@ export const NavbarItems = [
         url: '/Process',
         className: 'NavLinks',
         description: '',
-        iconDown: '',
+        iconDown: 'chevron-down-outline',
         childItems: [
-            // {
-            //     id: 1,
-            //     name: '',
-            //     classChildName: 'NavChildLinks',
-            // },         
-            // {
-            //     id: 2,
-            //     name: '',
-            //     classChildName: 'NavChildLinks',
-            // },   
-            // {
-            //     id: 3,
-            //     name: '',
-            //     classChildName: 'NavChildLinks',
-            // },   
+            {
+                id: 1,
+                name: 'User Information',
+                url: '/UserInfo',
+                classChildName: 'NavChildLinks',
+            },         
+            {
+                id: 2,
+                name: 'Vehicle Information',
+                url: '/VehicleInfo',
+                classChildName: 'NavChildLinks',
+            },   
         ],
     },
     {

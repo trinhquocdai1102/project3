@@ -13,7 +13,7 @@ body {
     --clrLink: #000;
     --navHeight: 70px;
     --decreaseMargin: 100px;
-    --homeContentPadding: 20px 0 100px;
+    --contentPadding: 20px 0 100px;
     --feedbackPadding: 28px;
     --inputFeedbackPadding: 12px;
     --feedbackClr: #002f59;

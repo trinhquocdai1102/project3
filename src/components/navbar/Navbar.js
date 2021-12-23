@@ -73,7 +73,7 @@ function Navbar() {
                     })}
                     </ul>
                     <div className="NavLogin">
-                    <Link to="/Login">Login</Link>
+                      <Link to="/Login">Login</Link>
                     </div>
                 </>
             )}

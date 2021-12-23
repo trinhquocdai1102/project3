@@ -34,7 +34,7 @@
 
 .NavCenter {
   display: flex;
-  gap: 40px;
+  gap: clamp(40px, 5vw, 100px);
   justify-content:center;
   padding: 0;
   font-size: 20px;
@@ -85,7 +85,7 @@
   position: absolute;
   display: none;
   margin: 0 auto;
-  top: calc(var(--navHeight));
+  top: calc(var(--navHeight) - 4px);
   background: var(--clrMenuChild);
   font-size: 16px;
   z-index: 1;
@@ -97,7 +97,7 @@
 
 .NavChildLinks a {
   display: block;
-  padding: 0 20px;
+  padding: 0 12px;
   height:70px;
   width: 180px;
   color: #fff;
@@ -218,7 +218,7 @@
   display:grid;
   grid-template-columns: repeat(1, 100%);
   gap: 100px;
-  padding:  var(--homeContentPadding);
+  padding:  var(--contentPadding);
   margin: 0;
 }
 
@@ -247,16 +247,16 @@
 
 .Our-Product li {
   display: grid;
-  gap: 40px;
+  gap: 20px;
   grid-template-columns: repeat(2, 40%);
   grid-template-rows: max-content;
   list-style: none;
-  width: 100%;
 }
 
 .Our-Product li div {
   text-align: left;
   max-width: 500px;
+  width: 100%;
 }
 
 .Our-Product__Img {
@@ -273,7 +273,6 @@
   border-radius: 20px;
 }
 
-
 .Our-Product__Desc a {
   font-size:28px;
 }
@@ -284,7 +283,7 @@
 
 /* Begin: Choose Us CSS */
 .ChooseUs {
-  padding: var(--homeContentPadding);
+  padding: var(--contentPadding);
 }
 
 .ChooseUs-List {
@@ -321,7 +320,7 @@
 
 /* Begin: Partnered With CSS */
 .PartnerWith {
-  padding: var(--homeContentPadding);
+  padding: var(--contentPadding);
 }
 
 .PartnerWith h1 {
@@ -353,7 +352,7 @@
 
 /* Begin: Feedback CSS */
 .Feedback {
-  padding: var(--homeContentPadding);
+  padding: var(--contentPadding);
   padding-bottom: 0;
 }
 
@@ -442,20 +441,235 @@
   outline:none;
 }
 
-.Feedback-2 li:last-child div:last-child button {
+
+/* End: Feedback CSS */
+
+
+/* Begin: Process CSS */
+.Process {
+  margin-top: var(--navHeight);
+  padding: var(--globalPCPadding);
+}
+
+.Process-Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 16%;
+}
+
+.Process-Header a {
+  color: #000;
+  text-decoration: none
+}
+
+.Process-Header li {
+  list-style: none;
+}
+
+.Process-HeaderItem:nth-child(odd) {
+  width: 120px;
+  text-align: center;
+}
+
+.Process-HeaderItem:nth-child(odd):hover {
+  opacity: .7;
+}
+
+.Process-HeaderItem:nth-child(even) div:nth-child(odd) {
+  width: 100px;
+}
+
+.Process-HeaderItem img {
+  width: 40%;
+}
+
+.Process-HeaderItem:nth-child(even) img {
+  width: 100%;
+}
+
+.Process-HeaderItem:nth-child(odd) img{
+  /* background: green; */
+  border-radius: 50%;
+}
+
+/* End: Process CSS */
+
+
+
+
+
+
+
+
+
+
+/* Begin: User Information CSS */
+.ProcessInfo {
+  max-width: clamp(200px, 80vw, 800px);
+  margin: calc(var(--navHeight) + 40px) auto 50px;
+}
+
+.ProcessInfo ul {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  padding: 0;
+}
+
+
+.ProcessInfo li {
+  list-style: none;
+}
+
+.ProcessInfo-Input {
+  width: 100%;
+}
+
+
+.ProcessInfo-Input p {
+  margin: 24px 0 8px;
+  font-weight: bold;
+}
+
+.ProcessInfo-Input Input {
+  padding: 8px;
+  width: 40%;
+}
+
+.ProcessInfo-Input:nth-child(1),
+.ProcessInfo-Input:nth-child(2) {
+  width: 50%;
+}
+
+.ProcessInfo-Input:nth-child(1) input,
+.ProcessInfo-Input:nth-child(2) input {
+  width: 80%;
+}
+
+.VehicleInfo .ProcessInfo-Input {
+  width: 50%;
+}
+
+.VehicleInfo .ProcessInfo-Input input{
+  width: 80% ;
+}
+/* End: User Information CSS */
+
+
+
+
+
+
+/* Begin: Button CSS */
+.Div-Reset-Submit {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.Submit-Btn,
+.Reset-Btn {
   outline: none;
-  padding: var(--inputFeedbackPadding);
   border: none;
+  display: block;
+  width: 100px;
+  height:44px;
   border-radius: 4px;
-  background: var(--feedbackClr);
+  font-weight: bold;
   color: #fff;
 }
 
-.Feedback-2 li:last-child div:last-child button:hover {
-  cursor: pointer;
-  opacity: 0.9;
+.Submit-Btn{
+  background: var(--feedbackClr);
 }
-/* End: Feedback CSS */
+
+.Reset-Btn {
+  background: red;
+  margin-right: 8px;
+}
+
+
+
+.Submit-Btn:hover,
+.Reset-Btn:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.Submit-Btn[disabled] {
+  color: rgba(0, 0, 0, 0.6);
+  background: #ccc;
+}
+
+.Submit-Btn[disabled]:hover {
+  cursor: default;
+  opacity: 1;
+}
+
+.Submit-Btn[disabled]:hover .Submit-Btn-Desc {
+  position: absolute;
+  display: block;
+  top: -20px;
+  left: 20px;
+  font-size: 12px;
+  color: red;
+  font-weight: normal;
+}
+
+.Submit-Btn .Submit-Btn-Desc {
+  display: none;
+}
+
+
+.Reset-Btn:hover .Reset-Btn-Desc {
+  position: absolute;
+  display: block;
+  top: -20px;
+  right: 0;
+  font-size: 12px;
+  color: red;
+  font-weight: normal;
+}
+
+.Reset-Btn .Reset-Btn-Desc {
+  display: none;
+}
+
+
+/* End: Button CSS */
+
+
+
+
+
+
+
+
+
+/* Begin: Privacy Policy */
+.PrivacyPolicy {
+  padding: 20px 0 60px;
+}
+
+.PrivacyPolicy input {
+  outline: none;
+}
+
+.PrivacyPolicy > span {
+  margin-left: 10px;
+}
+
+/* End: Privacy Policy */
+
+
+
+
+
+
+
+
+
 
 
 /* Begin:  Contact CSS*/
@@ -466,6 +680,7 @@
 
 .Contact-Header p:first-child {
   font-size: 28px;
+  font-weight: bold;
 }
 
 .Contact-Center {
@@ -763,6 +978,15 @@
     width: 60%;
     min-width: 200px;
   }
+
+  .ProcessInfo-Input:nth-child(1),
+  .ProcessInfo-Input:nth-child(2) {
+    width: 80%;
+  } 
+
+  .ProcessInfo-Input Input  {
+    width: 64%;
+  }
 }
 /* End: Mobile Responsive CSS  */
 
@@ -787,14 +1011,23 @@
 
   .Our-Product li:nth-child(even) {
     justify-content: center;
-}
+  }
+
+  .ProcessInfo-Input:nth-child(1),
+  .ProcessInfo-Input:nth-child(2) {
+    width: 60%;
+  } 
+
+  .ProcessInfo-Input Input  {
+    width: 48%;
+  }
 }
 /* End: Tablet Responsive CSS */
 
 
 
 
-/* Begin: Tablet & Mobile Responsive CSS */
+/* Begin: Mobile & Tablet Responsive CSS */
 @media (max-width: 1023px) {
   .Navbar { 
     padding:  var(--globalMobileTabletPadding);
@@ -842,6 +1075,10 @@
   
   .Contact-Center > div{
     width: 100%;
+}
+
+.UserInfo {
+  padding: var(--globalMobileTabletPadding);
 }
 
 }

@@ -40,7 +40,7 @@ const Feedback = () => {
                 </div>
                 <div>
                     <input type="text" placeholder="Your Email"/>
-                    <button onClick={alertSuccess}>Start Trial</button>
+                    <button className="Submit-Btn" onClick={alertSuccess}>Start Trial</button>
                 </div>
             </li>
         </ul>
