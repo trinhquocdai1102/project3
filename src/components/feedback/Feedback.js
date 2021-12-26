@@ -6,7 +6,7 @@ const Feedback = () => {
         alert("We have received your request");
     }
   return (
-    <div className="Feedback">
+    <div className="Feedback Content">
       <div className="Feedback-List">
         <ul className="Feedback-Item Feedback-1">
             <li>

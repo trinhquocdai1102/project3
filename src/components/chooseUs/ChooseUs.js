@@ -4,7 +4,7 @@ import { ChooseUsItems } from './ChooseUsItems';
 const ChooseUs = () => {
     return (
         <>
-             <div className="ChooseUs">
+             <div className="ChooseUs Content">
                 <h1>Why Choose Us</h1>
                 <ul className="ChooseUs-List">
                     {ChooseUsItems.map((item, index) => {

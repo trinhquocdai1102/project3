@@ -2,7 +2,7 @@ export const HelpItems = [
     {
         id: 1,
         name: 'Service',
-        url:'',
+        url:'#/',
         description: '',
     },
     {
@@ -14,7 +14,7 @@ export const HelpItems = [
     {
         id: 3,
         name: 'About us',
-        url:'',
+        url:'/Contact',
         description: '',
     },
     // {
@@ -29,25 +29,21 @@ export const ContactItems = [
     {
         id: 1,
         name: 'Get in touch',
-        url:'',
         description: '',
     },
     {
         id: 2,
         name: 'Address:',
-        url:'',
         description: 'No. 285, Doi Can Street, Ba Dinh District, Ha Noi, Vietnam',
     },
     {
         id: 3,
         name: 'Tel:',
-        url:'',
         description: '0329 711 504',
     },
     {
         id: 4,
         name: 'Email:',
-        url: '',
         description: 'trinhquocdai1102@gmail.com',
     },
 ]

@@ -9,16 +9,16 @@ body {
 }
 
 :root {
-    --navbarBg: linear-gradient(90deg, #e1eec3, #f05053);
+    --navbarBg: linear-gradient(90deg, #ff9966, #ff5e62);
     --clrLink: #000;
     --navHeight: 70px;
     --decreaseMargin: 100px;
-    --contentPadding: 20px 0 100px;
+    --contentPadding: 100px 0;
     --feedbackPadding: 28px;
     --inputFeedbackPadding: 12px;
     --feedbackClr: #002f59;
-    --clrMenuChild: #282a35;
-    --contactContentItemPadding: 20px;
+    --clrMenuChild: #013f76;
+    --contactContentItemPadding: 4%;
 }
 
 

@@ -1,12 +1,12 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
-import { ProcessDistanceItems } from './ProcessItems';
+import { ProcessHeaderItems } from './ProcessItems';
 
 const ProcessHeader = () => {
     return (
         <div>
             <ul className="Process-Header">
-                {ProcessDistanceItems.map((item, index) => {
+                {ProcessHeaderItems.map((item, index) => {
                     return(
                         <li key={index} className={item.className}>
                             <Link key={index} to={item.url}>
@@ -15,6 +15,7 @@ const ProcessHeader = () => {
                                 </div>
                                 <div>{item.name}</div>
                             </Link>
+                            <span>→</span>
                         </li>
                     )
                 })}

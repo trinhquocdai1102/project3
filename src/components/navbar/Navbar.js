@@ -6,13 +6,19 @@ import { NavbarItems } from './NavbarItems';
 
 function Navbar() {
     const [toggleMenu, setToggleMenu] = useState(false);
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-  const [navbar, setNavbar] = useState(false);
-//   const [menuId, setMenuId] = useState(1);
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+    const [navbar, setNavbar] = useState(true);
+    // const [openChildMenu, setOpenChildMenu] = useState(false)
 
   const toggleNavbar = () => {
-    setToggleMenu(!toggleMenu);
+      setToggleMenu(!toggleMenu);
   };
+
+  // const openChild = () => {
+  //   setOpenChildMenu(!openChildMenu)
+  // }
+
+  // console.log(openChildMenu)
 
   useEffect(() => {
     const changeWidth = () => {
@@ -38,6 +44,20 @@ function Navbar() {
     }
   }, [])
 
+  useEffect(() => {
+    const hiddenNav = () => {
+    if(window.scrollY >= 80 && window.innerWidth <= 739) {
+      document.querySelector('.Navbar').classList.add('hidden')
+    }else {
+      document.querySelector('.Navbar').classList.remove('hidden')
+    }
+  }
+    window.addEventListener("scroll", hiddenNav);
+    return () => {
+      window.removeEventListener("scroll", hiddenNav);
+    }
+  }, [])
+
     return (
         <nav className={navbar ? "Navbar active" : "Navbar"}>
             <div className="NavLogo">
@@ -48,22 +68,23 @@ function Navbar() {
             <div className="Mobile-Menu__Icon">
                 <ion-icon name="menu-outline" onClick={toggleNavbar}></ion-icon>
             </div>
-            {(toggleMenu || screenWidth > 739) && (
+            {(toggleMenu || screenWidth >= 740) && (
                 <>
                     <ul className="NavCenter">
                     {NavbarItems.map((item, index) => {
                         return (
                             <li key={index}>
-                                <Link to={item.url} className={item.className}>
-                                    <div>{item.name}
+                                <Link to={item.url} className={item.className} onClick={toggleNavbar}>
+                                    <div>
+                                      <span>{item.name}</span>
                                       <ion-icon name={'' || item.iconDown}></ion-icon>
                                     </div>
                                 </Link>
-                                    <div className="NavLinks-Items">
+                                    <div className={'NavLinks-Items'} >
                                         {item.childItems.map((child, index2) => {
                                             return (
                                                 <div key={index2} className={child.classChildName}>
-                                                    <Link to={child.url}>{child.name}</Link>
+                                                    <Link to={child.url} onClick={toggleNavbar}>{child.name}</Link>
                                                 </div>
                                             )
                                         })}
@@ -73,7 +94,7 @@ function Navbar() {
                     })}
                     </ul>
                     <div className="NavLogin">
-                      <Link to="/Login">Login</Link>
+                      <Link to="/Login" onClick={toggleNavbar}>Login</Link>
                     </div>
                 </>
             )}
@@ -83,3 +104,4 @@ function Navbar() {
 }
 
 export default Navbar
+// onClick={toggleNavbar}

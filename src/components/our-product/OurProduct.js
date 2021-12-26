@@ -4,14 +4,14 @@ import { OurProducts } from '../../pages/home/HomeItems';
 
 const OurProduct = () => {
     return (
-        <>
+        <div className="Content">
             <h1>Our Product</h1>
             <ul className="Our-Product">
                 {OurProducts.map((item, index) => {
                     return (
                         <li key={index}>
                             <div className="Our-Product__Img">
-                                <Link to="" >
+                                <Link to={item.url} >
                                     <img src={item.thumbnail} alt="" />
                                 </Link>
                             </div>
@@ -26,7 +26,7 @@ const OurProduct = () => {
                     )
                 })}
             </ul>
-        </>
+        </div>
     );
 };
 

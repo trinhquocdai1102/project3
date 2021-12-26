@@ -16,7 +16,7 @@ const Footer = () => {
                         {HelpItems.map((item, index) => {
                             return (
                                 <li key={index}>
-                                    <Link to="">
+                                    <Link to={item.url}>
                                         {item.name}
                                     </Link>
                                 </li>
@@ -29,9 +29,7 @@ const Footer = () => {
                         {ContactItems.map((item, index) => {
                             return (
                                 <li key={index}>
-                                    <Link to="">
                                         {item.name}{' '}{item.description}
-                                    </Link>
                                 </li>
                             )
                         })}

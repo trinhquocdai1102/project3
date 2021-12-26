@@ -3,7 +3,7 @@ import { PartnerItems } from './PartnerItems';
 
 const PartneredWith = () => {
     return (
-        <div className='PartnerWith'>
+        <div className='PartnerWith Content'>
             <h1>We're Partnered With</h1>
             <ul className="PartnerWith-List">
                 {PartnerItems.map((item, index) => {

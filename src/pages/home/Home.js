@@ -3,12 +3,12 @@ import ChooseUs from '../../components/chooseUs/ChooseUs';
 import Feedback from '../../components/feedback/Feedback';
 import OurProduct from '../../components/our-product/OurProduct';
 import PartneredWith from '../../components/partnered-with/PartneredWith';
-import Slider from '../../components/slider/Slider'
+import HomeSlider from '../../components/slider/HomeSlider'
 
 const Home = () => {
     return (
         <>
-            <Slider/>
+            <HomeSlider/>
             <div className="HomePage">
                 <OurProduct/>
                 <ChooseUs/>
