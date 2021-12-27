@@ -8,17 +8,18 @@ function Navbar() {
     const [toggleMenu, setToggleMenu] = useState(false);
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
     const [navbar, setNavbar] = useState(true);
-    // const [openChildMenu, setOpenChildMenu] = useState(false)
+
+
+    const [subnav, setSubnav] = useState(false);
+
+    const showSubnav = () => setSubnav(!subnav);
+
+
+
 
   const toggleNavbar = () => {
       setToggleMenu(!toggleMenu);
   };
-
-  // const openChild = () => {
-  //   setOpenChildMenu(!openChildMenu)
-  // }
-
-  // console.log(openChildMenu)
 
   useEffect(() => {
     const changeWidth = () => {
@@ -48,6 +49,7 @@ function Navbar() {
     const hiddenNav = () => {
     if(window.scrollY >= 80 && window.innerWidth <= 739) {
       document.querySelector('.Navbar').classList.add('hidden')
+      setToggleMenu(false)
     }else {
       document.querySelector('.Navbar').classList.remove('hidden')
     }
@@ -74,21 +76,21 @@ function Navbar() {
                     {NavbarItems.map((item, index) => {
                         return (
                             <li key={index}>
-                                <Link to={item.url} className={item.className} onClick={toggleNavbar}>
+                                <Link to={item.url} className={item.className} onClick={item.subNav && showSubnav} >
                                     <div>
                                       <span>{item.name}</span>
                                       <ion-icon name={'' || item.iconDown}></ion-icon>
                                     </div>
-                                </Link>
-                                    <div className={'NavLinks-Items'} >
-                                        {item.childItems.map((child, index2) => {
+                                    <ul className={'NavLinks-Items'} >
+                                        {item.subNav.map((child, index2) => {
                                             return (
-                                                <div key={index2} className={child.classChildName}>
+                                                <li key={index2} className={child.subNavClass}>
                                                     <Link to={child.url} onClick={toggleNavbar}>{child.name}</Link>
-                                                </div>
+                                                </li>
                                             )
                                         })}
-                                    </div>
+                                    </ul>
+                                </Link>
                             </li>
                         )
                     })}

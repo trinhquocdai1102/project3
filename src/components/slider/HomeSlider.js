@@ -55,10 +55,6 @@ function HomeSlider() {
               alt={item.title}
             />
             </div>
-            {/* <div className="Slider-Content">
-              <p>{item.title}</p>
-              <h1>{item.slogan}</h1>
-            </div> */}
           </div>
         );
       })}
