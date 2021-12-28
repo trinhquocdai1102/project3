@@ -1,69 +1,66 @@
-import { useState } from "react";
-import DataSlider from "./DataSlider";
-import BtnSlider from "./BtnSlider";
-import "../../App.css";
+import React, { useEffect, useState } from 'react';
+import BtnSlider from './BtnSlider';
 
-function Slider() {
-  const [slideIndex, setSlideIndex] = useState(1);
+const Slider = ( {data} ) => {
+  const [current, setCurrent] = useState(0);
+  const length = data.length;
+
+  useEffect(() => {
+    const sliderChange = setInterval(function () {
+      setCurrent(current === length - 1 ? 0 : current + 1);
+    }, 3000);
+    return () => clearInterval(sliderChange)
+  }, [current, length])
+
 
   const nextSlide = () => {
-    if (slideIndex !== DataSlider.length) {
-      setSlideIndex(slideIndex + 1);
-    } else if (slideIndex === DataSlider.length) {
-      setSlideIndex(1);
-    }
+    setCurrent(current === length - 1 ? 0 : current + 1);
   };
 
   const prevSlide = () => {
-    if (slideIndex !== 1) {
-      setSlideIndex(slideIndex - 1);
-    } else if (slideIndex === 1) {
-      setSlideIndex(DataSlider.length);
-    }
+    setCurrent(current === 0 ? length - 1 : current - 1);
   };
 
-  const moveDot = (index) => {
-    setSlideIndex(index);
+  if (!Array.isArray(data) || length <= 0) {
+    return null;
+  }
+
+  const moveDot = (current) => {
+    setCurrent(current);
   };
 
+
+  
   return (
-    <div className="Container-Slider">
-      {DataSlider.map((item, index) => {
-        return (
-          <div key={index}>
-             <div
-            className={
-              slideIndex === index + 1 ? "Slide Active-Animation" : "Slide"
-            }
-          >
-            <img
-              src={
-                process.env.PUBLIC_URL + `/image/home/slider/slider${index + 1}.jpg`
-              }
-              alt={item.title}
-            />
-            </div>
-            {/* <div className="Slider-Content">
-              <p>{item.title}</p>
-              <h1>{item.slogan}</h1>
-            </div> */}
+    <>
+      <section className='Container-Slider'>
+          {data.map((item, index) => {
+              return (
+                <div
+                  className={index === current ? 'Slide Active-Animation' : 'Slide'}
+                  key={index}
+                >
+                  {index === current && (
+                    <img src={item.url} alt={data.title}/>
+                  )}
+                </div>
+              );
+          })}
+          <div className="Container-Dots">
+              {Array.from({ length: length }).map((item, index) => (
+                <div
+                  key={index}
+                  onClick={() => moveDot(index)}
+                  className={current === index ? "Dot Active" : "Dot"}
+                ></div>
+              ))}
           </div>
-        );
-      })}
-      <BtnSlider moveSlide={nextSlide} direction={"Next"} />
-      <BtnSlider moveSlide={prevSlide} direction={"Prev"} />
-
-      <div className="Container-Dots">
-        {Array.from({ length: 3 }).map((item, index) => (
-          <div
-            key={index}
-            onClick={() => moveDot(index + 1)}
-            className={slideIndex === index + 1 ? "Dot Active" : "Dot"}
-          ></div>
-        ))}
-      </div>
-    </div>
-  );
-}
+          <BtnSlider direction={"Prev"} moveSlide={prevSlide} onClick={prevSlide} />
+          <BtnSlider direction={"Next"} moveSlide={nextSlide} onClick={nextSlide} />
+      </section>
+      
+    </>
+    );
+};
 
 export default Slider;

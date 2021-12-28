@@ -1,11 +1,11 @@
 import "../../App.css";
 import { dataSliderHome } from "./DataSlider";
-import InsuranceSlider from "./InsuranceSlider";
+import Slider from "./Slider";
 
 function HomeSlider() {
   return (
     <>
-      <InsuranceSlider 
+      <Slider 
         data={dataSliderHome} 
         />
     </>

@@ -1,12 +1,12 @@
 import "../../App.css";
 import { dataSliderMotorbikeInsurance } from "./DataSlider";
-import InsuranceSlider from "./InsuranceSlider";
+import Slider from "./Slider";
 
 function MotorbikeSlider() {
 
   return (
     <>
-      <InsuranceSlider 
+      <Slider 
         data={dataSliderMotorbikeInsurance}
         />
     </>
