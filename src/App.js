@@ -12,6 +12,8 @@ import Login from './pages/login/Login';
 import Register from './pages/login/Register';
 import MotorInsurance from './pages/insurance/MotorInsurance';
 import ForgotPassword from './pages/login/ForgotPassword';
+import SubAgreement from './components/privacy-policy/SubAgreement';
+import PrivacyPolicyContent from './components/privacy-policy/PrivacyPolicyContent';
 
 
 function App() {
@@ -28,6 +30,8 @@ function App() {
               <Route path="/Login" element={<Login/>} />
               <Route path="/Register" element={<Register/>} />
               <Route path="/ForgotPassword" element={<ForgotPassword/>} />
+              <Route path="/SubAgreement" element={<SubAgreement/>} />
+              <Route path="/PrivacyPolicyContent" element={<PrivacyPolicyContent/>} />
         </Routes>
       <Footer/>
     </div>    

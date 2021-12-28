@@ -16,7 +16,7 @@ const OurProduct = () => {
                                 </Link>
                             </div>
                             <div className="Our-Product__Desc">
-                                <Link to="">{item.name}</Link>
+                                <Link to="{item.url}">{item.name}</Link>
                                 <div className="Our-Product__Text">
                                     <p>{item.description}</p>
                                     <p>{'' || item.description2}</p>
