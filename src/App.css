@@ -774,6 +774,21 @@
   margin-left: 10px;
 }
 
+.Privacy-Content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.Privacy-Content p {
+  padding: 0 4%;
+}
+
+.PrivacyPolicy-Content {
+  text-align: center;
+  margin: 8% 0;
+}
+
+
 /* End: Privacy Policy */
 
 
@@ -1460,6 +1475,12 @@
   
 .NavCenter li .NavLinks-Items.active {
   display: block;
+}
+
+.Privacy-Content p,
+.Privacy-Content h2 {
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 }
