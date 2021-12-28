@@ -26,7 +26,7 @@ export const NavbarItems = [
 	},
 	{
 		id: 2,
-		name: "Vehicle insurance",
+		name: "Insurance",
 		url: "#/",
 		className: "NavLinks",
 		description: "",
