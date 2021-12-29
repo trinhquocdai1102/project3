@@ -1,7 +1,7 @@
 /* Begin: Navbar CSS */
 .Navbar {
 	position: fixed;
-	top: 0;
+	top: var(--topNavHeight);
 	right: 0;
 	left: 0;
 	display: flex;
@@ -19,6 +19,22 @@
 
 .Navbar.hidden {
 	display: none;
+}
+
+.marginTop0 {
+	margin-top: 0;
+}
+
+.marginTopNavHeight {
+	margin-top: var(--navHeight);
+}
+
+.Top0 {
+	top: 0;
+}
+
+.NavSearch-Input.hidden {
+	display: none !important;
 }
 
 .Navbar a {
@@ -90,14 +106,104 @@
 	margin-left: 4px;
 }
 
+.NavLogin {
+	width: 100%;
+	background-color: var(--feedbackClr);
+	display: flex;
+	height: var(--topNavHeight);
+	justify-content: space-around;
+	z-index: 999;
+	align-items: center;
+}
+
+.NavLogin span {
+	font-size: 12px;
+	margin-left: 4%;
+	color: #fff;
+}
+
+.NavLogin span ion-icon {
+	margin-right: 8px;
+}
+
 .NavLogin a {
 	display: block;
 	width: 100px;
-	line-height: 40px;
-	background-color: #4596ce;
-	color: #fff;
+	border-radius: 12px;
+	line-height: 48px;
+	color: var(--feedbackClr);
+	background: #fff;
 	border-radius: 12px;
 	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.NavLogin a:hover {
+	opacity: 0.6;
+}
+
+.NavSearch {
+	font-size: 24px;
+	position: relative;
+}
+
+.NavSearch:hover ion-icon {
+	transform: scale(1.1);
+	opacity: 0.5;
+	cursor: pointer;
+}
+
+.NavSearch-Input {
+	position: absolute;
+	bottom: -100px;
+	right: 0px;
+	width: clamp(100px, 80vw, 400px);
+	background: rgb(238, 228, 228);
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 8px 0 0 8px;
+}
+
+.btnUpToTop {
+	position: fixed;
+	display: block;
+	width: 40px;
+	height: 40px;
+	bottom: 10px;
+	right: 10px;
+	font-size: 24px;
+}
+
+.btnUpToTop.hidden {
+	display: none;
+}
+
+.btnUpToTop:hover {
+	cursor: pointer;
+	opacity: 0.5;
+}
+
+.NavSearch-Input input {
+	width: 80%;
+	height: 32px;
+	outline: none;
+	padding: 0 8px;
+}
+
+.NavSearch-Input ion-icon {
+	position: absolute;
+	right: 40px;
+	top: 40%;
+	font-size: 20px;
+}
+
+.NavSearch-Input ion-icon:hover {
+	cursor: pointer;
+	transform: scale(1.1);
+	opacity: 0.5;
 }
 
 .NavLinks-Items {
@@ -133,7 +239,7 @@
 /* Begin: Slider CSS */
 .Container-Slider {
 	width: 100%;
-	height: 500px;
+	height: 600px;
 	top: 0;
 	position: relative;
 	overflow: hidden;
@@ -569,8 +675,6 @@
 
 /* Begin: User Information CSS */
 .ProcessInfo {
-	/* background: url('../public/image/process/user-bg.jpg') no-repeat center center fixed; */
-	/* background-size: cover; */
 	padding: calc(var(--navHeight) + 40px) 0 40px;
 }
 
@@ -824,7 +928,7 @@
 	border-radius: 10px;
 	text-align: center;
 	height: auto;
-	padding: clamp(8px, 8%, 52px);
+	padding: 3% clamp(8px, 8%, 52px) 1%;
 }
 
 .Login-List h1 {
@@ -1119,6 +1223,7 @@
 /* Begin: Mobile Responsive CSS  */
 @media (max-width: 739px) {
 	.Navbar {
+		top: 0;
 		display: block;
 		padding: 0 !important;
 	}
@@ -1153,43 +1258,31 @@
 		color: var(--clrMenuChild);
 	}
 
-	.Mobile-Menu__Icon {
+	.Mobile-Menu-Icon {
 		position: absolute;
+		display: flex;
+		justify-content: space-between;
 		right: 16px;
+		height: var(--navHeight);
+		width: 20%;
+		gap: 8%;
 		top: 0;
-		width: 30px;
 		font-size: 32px;
-		padding: 8px;
+		align-items: center;
 	}
 
-	.Mobile-Menu__Icon ion-icon {
-		vertical-align: middle;
-	}
-
-	.Mobile-Menu__Icon:hover ion-icon {
+	.Mobile-Menu-Icon ion-icon:hover {
 		transform: scale(1.1);
 		opacity: 0.5;
 		cursor: pointer;
 	}
 
-	.NavLogin {
-		display: flex;
-		justify-content: center;
-		line-height: var(--navHeight);
-	}
-
 	.NavLogin a {
-		width: 100%;
-		border-radius: 0;
-		padding: 16px;
-		align-self: center;
 		font-size: 20px;
-		font-weight: bold;
 	}
 
-	.NavLogin a:hover {
-		opacity: 0.9;
-		background: blue;
+	.NavSearch {
+		display: none;
 	}
 
 	.NavLinks-Items {
@@ -1263,6 +1356,28 @@
 	.Content-Image {
 		width: clamp(40px, 80%, 160px);
 		margin: 0 auto;
+	}
+
+	.NavLogin {
+		display: none;
+	}
+
+	.NavLogin-Mobile {
+		width: 100%;
+	}
+
+	.NavLogin-Mobile a {
+		display: block;
+		width: 100%;
+		text-align: center;
+		padding: 16px 16px 16px 0;
+		background: #2340cd;
+		color: #fff;
+	}
+
+	.NavLogin-Mobile a:hover {
+		background: #fff;
+		color: var(--feedbackClr);
 	}
 }
 /* End: Mobile Responsive CSS  */
@@ -1366,12 +1481,8 @@
 
 /* Begin: Table & PC Responsive CSS */
 @media (min-width: 740px) {
-	.Mobile-Menu__Icon {
+	.Mobile-Menu-Icon {
 		display: none;
-	}
-
-	.NavLogin a:hover {
-		opacity: 0.8;
 	}
 
 	.NavChildLinks:hover a {
@@ -1386,19 +1497,15 @@
 		padding: 0;
 		min-width: 200px;
 	}
+
+	.NavLogin-Mobile {
+		display: none;
+	}
 }
 /* End: Table & PC Responsive CSS */
 
 /* Begin: PC Responsive CSS */
 @media (min-width: 1023px) {
-	/* .Login {
-    height: 100vh;
-  }
-
-  .ProcessInfo {
-    height: 100vh;
-  } */
-
 	.Feedback-Item li {
 		justify-content: center;
 		height: clamp(400px, 44vw, 500px);
@@ -1412,7 +1519,7 @@
 	.Login {
 		position: fixed;
 		bottom: 0;
-		top: 0;
+		top: var(--navHeight);
 		left: 0;
 		right: 0;
 		z-index: 10;

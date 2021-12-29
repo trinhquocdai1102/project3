@@ -19,6 +19,7 @@ body {
 	--feedbackClr: #002f59;
 	--clrMenuChild: #013f76;
 	--contactContentItemPadding: 4%;
+	--topNavHeight: 60px;
 }
 
 /* Tablet & Mobile CSS */

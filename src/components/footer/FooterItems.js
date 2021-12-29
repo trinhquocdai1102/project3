@@ -45,6 +45,6 @@ export const ContactItems = [
 	{
 		id: 4,
 		name: "Email:",
-		description: "trinhquocdai1102@gmail.com",
+		description: "team3@gmail.com",
 	},
 ];
