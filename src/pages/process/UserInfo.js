@@ -19,6 +19,7 @@ const UserInfo = () => {
 
 	return (
 		<div className="ProcessInfo">
+			<title>User information</title>
 			<ProcessHeader />
 			<form onSubmit={handleSubmit(onSubmit)}>
 				<ul className="Process-Content">

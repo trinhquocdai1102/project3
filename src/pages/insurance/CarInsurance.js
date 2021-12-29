@@ -6,6 +6,7 @@ import { CarInsuranceOptions } from "./CarInsuranceItems";
 const CarInsurance = () => {
 	return (
 		<>
+			<title>Car Insurance</title>
 			<CarSlider />
 			<div className="Insurance Content">
 				<div className="CarInsurance"></div>

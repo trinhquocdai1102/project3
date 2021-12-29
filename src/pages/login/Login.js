@@ -6,6 +6,7 @@ import { LoginItems } from "./FormItems";
 const Login = () => {
 	return (
 		<div className="Login">
+			<title>Login</title>
 			<div className="Login-List">
 				<h1>Login</h1>
 				<FormContent

@@ -8,6 +8,7 @@ import HomeSlider from "../../components/slider/HomeSlider";
 const Home = () => {
 	return (
 		<>
+			<title>Vehicle Insurance</title>
 			<HomeSlider />
 			<div className="HomePage">
 				<OurProduct />

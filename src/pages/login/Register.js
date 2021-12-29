@@ -6,6 +6,7 @@ import { RegisterItems } from "./FormItems";
 const Register = () => {
 	return (
 		<div className="Login">
+			<title>Sign up</title>
 			<div className="Login-List">
 				<h1>Creat your account</h1>
 				<FormContent

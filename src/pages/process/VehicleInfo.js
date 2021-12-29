@@ -20,6 +20,7 @@ const VehicleInfo = () => {
 
 	return (
 		<div className="ProcessInfo VehicleInfo">
+			<title>Vehicle information</title>
 			<ProcessHeader />
 			<form onSubmit={handleSubmit(onSubmit)}>
 				<ul className="Process-Content">

@@ -8,6 +8,7 @@ const ForgotPassword = () => {
 	const onSubmit = (data) => console.log(data);
 	return (
 		<div className="ForgotPassword Login">
+			<title>Reset password</title>
 			<div className="Content-Form">
 				<div className="Content-Form__Container">
 					<form onSubmit={handleSubmit(onSubmit)}>

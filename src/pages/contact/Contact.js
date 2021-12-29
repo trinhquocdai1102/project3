@@ -4,6 +4,7 @@ import { ContactHeader, ContactInputList, ContactRight } from "./ContactItems";
 function Contact() {
 	return (
 		<div className="Contact Content">
+			<title>Contact us</title>
 			<div className="Contact-Header">
 				{ContactHeader.map((item, index) => {
 					return <p key={index}>{item.description}</p>;
